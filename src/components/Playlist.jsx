@@ -1,8 +1,5 @@
 
-function Playlist({playlist}) {
-
-
-
+function Playlist({playlist, removeFromPlaylist}) {
 
     function highlight5StarSongs(rating) {
         const style = {};
@@ -21,8 +18,8 @@ function Playlist({playlist}) {
                         <span style={highlight5StarSongs(song.rating)}>
                             {song.title} ({song.artist})  - {song.duration}
                             </span>
-                        <button type="submit" className="btn" style={{marginLeft: '50px', marginBottom: '10px'}}>
-                            Remove to Playlist
+                        <button onClick={() => removeFromPlaylist(index)} className="btn" style={{marginLeft: '50px', marginBottom: '10px'}}>
+                            Remove from Playlist
                         </button>
                     </li>
                 ))}

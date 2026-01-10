@@ -13,6 +13,12 @@ function App() {
         setPlaylist([...playlist, song]);
     }
 
+    function removeFromPlaylist(removeSong) {
+        console.log("Removing from playlist:", removeSong);
+        setPlaylist((prev) =>
+        prev.filter((_,index) => index !== removeSong));
+    }
+
 
     return (
         <>
@@ -23,7 +29,7 @@ function App() {
                 </div>
                <div>
                    <h1>Playlist</h1>
-                   <Playlist playlist={playlist}/>
+                   <Playlist playlist={playlist} removeFromPlaylist={removeFromPlaylist} />
                </div>
             </div>
         </>

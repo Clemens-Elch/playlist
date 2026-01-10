@@ -1,10 +1,13 @@
+function Rating({ rating }) {
+    const stars = [];
 
-function Rating(){
-    return(
-        <div>
+    for (let i = 1; i <= rating; i++) {
+        stars.push(
+            <span key={i}>★</span>
+        );
+    }
 
-        </div>
-    )
+    return <span>{stars}</span>;
 }
 
 export default Rating;

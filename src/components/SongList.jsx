@@ -1,3 +1,4 @@
+import Rating from "./Rating.jsx";
 
 function SongList({songs, addToPlaylist}) {
 
@@ -18,6 +19,9 @@ function SongList({songs, addToPlaylist}) {
                         <span style={highlight5StarSongs(song.rating)}>
                             {song.title} ({song.artist})  - {song.duration}
                             </span>
+                        <span style={{"paddingLeft": "5px"}}>
+                             <Rating rating={song.rating} />
+                        </span>
                         <button onClick={()=> addToPlaylist(song)} className="btn" style={{marginLeft: '50px', marginBottom: '10px'}}>
                             Add to Playlist
                         </button>

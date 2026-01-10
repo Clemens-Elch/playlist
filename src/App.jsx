@@ -13,10 +13,10 @@ function App() {
         setPlaylist([...playlist, song]);
     }
 
-    function removeFromPlaylist(removeSong) {
-        console.log("Removing from playlist:", removeSong);
+    function removeFromPlaylist(removeSongIndex) {
+        console.log("Removing from playlist:", removeSongIndex);
         setPlaylist((prev) =>
-        prev.filter((_,index) => index !== removeSong));
+        prev.filter((_,index) => index !== removeSongIndex));
     }
 
 
